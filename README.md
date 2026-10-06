@@ -1,97 +1,97 @@
-# 🛍️ EasyMart Multi-Application E-Commerce Platform
+# 🛍️ EasyMart — Enterprise Multi-Channel E-Commerce Ecosystem
 
-Enterprise-Grade Multi-Channel E-Commerce Ecosystem built with React, Redux Toolkit, Node.js, Express, MongoDB Atlas, and TailwindCSS.
+[![Vercel Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://easy-mart-phi.vercel.app)
+[![MongoDB Atlas](https://img.shields.io/badge/Database-MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb)](https://mongodb.com)
+[![Redux Toolkit](https://img.shields.io/badge/State-Redux%20Toolkit-764ABC?style=for-the-badge&logo=redux)](https://redux-toolkit.js.org)
+[![Node.js & Express](https://img.shields.io/badge/Backend-Node.js%20%7C%20Express-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org)
 
----
-
-## 🏛️ Ecosystem Overview
-
-| Application | Directory | Port | Target Domain / Role |
-| :--- | :--- | :--- | :--- |
-| **Storefront Web App** | `/frontend` | `5173` | Customer shopping, flash sales, festival offers, AI customer care, and checkout. |
-| **Admin Control Tower** | `/admin` | `5174` | Product catalog, dispatch management, GPS fleet tracking, and return approvals. |
-| **Delivery Driver Terminal** | `/delivery` | `5175` | Courier pickup, real-time GPS telemetry, route navigation, and customer OTP verification. |
-| **Sales Force Web App** | `/sales` | `5176` | Sales quota tracking, referral link attribution (`?ref=CODE`), and deal closing. |
-| **Central REST API** | `/backend` | `5000` | Express + Mongoose API connected to MongoDB Atlas. |
+An enterprise-grade, fully dynamic, multi-channel commerce platform connecting **Storefront Buyers**, **Administrative Dispatchers**, **Logistics Delivery Couriers**, and **Enterprise Sales Forces** into a unified, real-time MongoDB Atlas ecosystem.
 
 ---
 
-## 🚀 Step 1: Push to GitHub
+## 🌐 Live Production Deployments
 
-Run these commands in your project root terminal (`c:\Users\CORE I7\Documents\EasyMart`):
+| Channel | Live Production URL | Purpose & Capabilities |
+| :--- | :--- | :--- |
+| **🛍️ Consumer Storefront** | [**easy-mart-phi.vercel.app**](https://easy-mart-phi.vercel.app) | Live product catalog, dynamic festival discounts, AI Customer Support Agent, shopping cart, instant checkout with referral tracking (`?ref=CODE`), and doorstep return requests. |
+| **👑 Admin Control Tower** | [**easy-mart-fjk5.vercel.app**](https://easy-mart-fjk5.vercel.app) | Full product CRUD, category management, Amazon/Flipkart courier dispatching, GPS fleet monitoring, sales quota onboardings, and return/refund approvals. |
+| **🚚 Delivery Driver Terminal** | [**easy-mart-vgp7.vercel.app**](https://easy-mart-vgp7.vercel.app) | Active trip manifest queue, warehouse pickup verification, real-time GPS telemetry, route navigation, and 4-digit customer handover security OTP verification. |
+| **💼 Sales Force Web App** | [**easy-mart-lvrc.vercel.app**](https://easy-mart-lvrc.vercel.app) | Live revenue performance targets, 5% commission earnings, referral link generator, and direct B2B client lead bookings with celebratory animations. |
+| **⚡ Backend API Cluster** | Hosted on Render / Cloud | Central RESTful API powered by Node.js, Express, Mongoose, JWT, and CORS. |
 
-```bash
-# 1. Initialize Git repository
-git init
+---
 
-# 2. Add all clean project files (node_modules & .env are automatically ignored)
-git add .
+## 🏛️ Platform Architecture
 
-# 3. Create initial commit
-git commit -m "feat: complete EasyMart dynamic multi-app ecosystem"
-
-# 4. Create a new repository on GitHub (e.g. 'easymart-platform')
-# Then link and push your main branch:
-git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/easymart-platform.git
-git push -u origin main
+```mermaid
+graph TD
+    A[🛍️ Storefront Web App :5173] -->|Cart, Orders, Returns, AI Care| API[⚡ Central REST API :5000]
+    B[👑 Admin Control Tower :5174] -->|Catalog, Dispatches, Quotas, Roles| API
+    C[🚚 Delivery Terminal :5175] -->|Assigned Trips, Live GPS, OTP Drop-off| API
+    D[💼 Sales Force App :5176] -->|Quota Metrics, Leads, Referrals| API
+    API <--> DB[(🍃 MongoDB Atlas Cloud Shard)]
 ```
 
 ---
 
-## ☁️ Step 2: Host Backend API
+## ✨ Key System Capabilities
 
-You can deploy the backend on **Render**, **Railway**, or **Vercel**:
+### 1. 🛍️ Dynamic Storefront & AI Customer Care
+- **Dynamic Festival Engine**: Automatically highlights active festival campaigns (Diwali, Holi, Cyber Monday, Flash Sales) with customizable coupon codes and discount banners.
+- **AI Support Agent**: Instant in-app assistant that looks up customer order histories, checks tracking codes, explains return policies, and suggests top catalog products.
+- **Connected Referral Flow**: Listens for URL parameters (`?ref=SALES-CODE`) to automatically attribute customer checkouts to sales representatives.
 
-### Option A: Render.com (Recommended for Node/Express Servers)
-1. Go to [Render Dashboard](https://dashboard.render.com/) ➔ Click **New Web Service**.
-2. Connect your GitHub repository `easymart-platform`.
-3. Set **Root Directory**: `backend`
-4. Set **Build Command**: `npm install`
-5. Set **Start Command**: `node src/server.js`
-6. Add Environment Variables:
-   - `PORT`: `5000`
-   - `MONGODB_URI`: `your_mongodb_atlas_connection_string`
-   - `JWT_SECRET`: `easymart_production_jwt_secret_2026`
-   - `NODE_ENV`: `production`
-7. Click **Deploy**. Note your live API URL (e.g., `https://easymart-api.onrender.com`).
+### 2. 👑 Admin Control Tower & Amazon Logistics Model
+- **Courier Assignment**: Assign any pending order to verified delivery couriers with pickup warehouse hub routing.
+- **Dynamic Role Management**: Promotes accounts instantly across `Customer`, `Delivery Courier`, `Sales Executive`, and `Administrator` with automatic attribute bootstrapping.
+- **Doorstep Returns & Refunds**: Handles customer return workflows from initial reverse pickup to final refund crediting.
 
----
+### 3. 🚚 Delivery Driver Operations
+- **Live Trip Queue**: Real-time dispatch manifests queried directly from MongoDB Atlas.
+- **Security OTP Verification**: Requires the customer's dynamic 4-digit code before handing over packages, triggering celebratory feedback upon completion.
+- **Duty Toggle & Telemetry**: Driver can switch between `Online` / `Offline` status with simulated GPS updates.
 
-## ⚡ Step 3: Host the 4 Frontend Apps on Vercel
-
-Since all 4 apps live in the same repository, create **4 separate projects on Vercel** pointing to the repository with different root directories:
-
-### 1. Storefront (`/frontend`)
-- **Project Name**: `easymart-store`
-- **Root Directory**: `frontend`
-- **Framework Preset**: `Vite`
-- **Environment Variable**:
-  - `VITE_API_URL`: `https://easymart-api.onrender.com/api`
-
-### 2. Admin Portal (`/admin`)
-- **Project Name**: `easymart-admin`
-- **Root Directory**: `admin`
-- **Framework Preset**: `Vite`
-- **Environment Variable**:
-  - `VITE_API_URL`: `https://easymart-api.onrender.com/api`
-
-### 3. Delivery Terminal (`/delivery`)
-- **Project Name**: `easymart-delivery`
-- **Root Directory**: `delivery`
-- **Framework Preset**: `Vite`
-- **Environment Variable**:
-  - `VITE_API_URL`: `https://easymart-api.onrender.com/api`
-
-### 4. Sales Force Web App (`/sales`)
-- **Project Name**: `easymart-sales`
-- **Root Directory**: `sales`
-- **Framework Preset**: `Vite`
-- **Environment Variable**:
-  - `VITE_API_URL`: `https://easymart-api.onrender.com/api`
+### 4. 💼 Sales Force Web App
+- **Quota & Commission Tracking**: Live visual progress bars measuring revenue against monthly targets with real-time 5% commission calculation.
+- **Direct Lead Booking**: Allows sales reps to enter direct client orders with instant quota attribution.
 
 ---
 
-## 🛡️ Production Health & Seed Checklist
-Once deployed, seed initial categories and catalog products by visiting your live admin portal:
-`https://your-admin-url.vercel.app/database` ➔ Click **Seed Catalog & Categories**.
+## 🛠️ Technology Stack
+
+- **Frontend & Admin Apps**: React 19, Vite, Redux Toolkit, TailwindCSS, Lucide Icons, Canvas Confetti.
+- **Backend**: Node.js, Express, Mongoose, JSON Web Tokens (JWT), Bcrypt.js, Morgan.
+- **Database**: MongoDB Atlas Cloud Cluster.
+- **Hosting & CI/CD**: Vercel (Frontends with `vercel.json` SPA rewrites) & Render (Node.js API).
+
+---
+
+## 💻 Local Development Setup
+
+Clone the repository and run all services concurrently:
+
+```bash
+# Clone repository
+git clone https://github.com/Mohammedsajadvt/EasyMart.git
+cd EasyMart
+
+# 1. Start Backend API (:5000)
+cd backend && npm install && npm run dev
+
+# 2. Start Storefront (:5173)
+cd ../frontend && npm install && npm run dev
+
+# 3. Start Admin Portal (:5174)
+cd ../admin && npm install && npm run dev
+
+# 4. Start Delivery Terminal (:5175)
+cd ../delivery && npm install && npm run dev
+
+# 5. Start Sales Web App (:5176)
+cd ../sales && npm install && npm run dev
+```
+
+---
+
+## 📄 License
+MIT License © 2026 Mohammed Sajad VT. All rights reserved.
