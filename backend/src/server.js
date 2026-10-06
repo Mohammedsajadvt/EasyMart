@@ -54,11 +54,12 @@ app.use('/api/seed', seedRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
-  app.listen(PORT, () => {
-    console.log(`🚀 EasyMart Backend Server running on port ${PORT}`);
-  });
-}
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 EasyMart Backend Server running on port ${PORT}`);
+});
 
 module.exports = app;
+
 
