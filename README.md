@@ -17,7 +17,7 @@ An enterprise-grade, fully dynamic, multi-channel commerce platform connecting *
 | **👑 Admin Control Tower** | [**easy-mart-fjk5.vercel.app**](https://easy-mart-fjk5.vercel.app) | Full product CRUD, category management, Amazon/Flipkart courier dispatching, GPS fleet monitoring, sales quota onboardings, and return/refund approvals. |
 | **🚚 Delivery Driver Terminal** | [**easy-mart-vgp7.vercel.app**](https://easy-mart-vgp7.vercel.app) | Active trip manifest queue, warehouse pickup verification, real-time GPS telemetry, route navigation, and 4-digit customer handover security OTP verification. |
 | **💼 Sales Force Web App** | [**easy-mart-lvrc.vercel.app**](https://easy-mart-lvrc.vercel.app) | Live revenue performance targets, 5% commission earnings, referral link generator, and direct B2B client lead bookings with celebratory animations. |
-| **⚡ Backend API Cluster** | Hosted on Render / Cloud | Central RESTful API powered by Node.js, Express, Mongoose, JWT, and CORS. |
+| **⚡ Backend API Cluster** | [**easymart-cew3.onrender.com**](https://easymart-cew3.onrender.com) | Central RESTful API powered by Node.js, Express, Mongoose, JWT, and CORS connected to MongoDB Atlas. |
 
 ---
 
